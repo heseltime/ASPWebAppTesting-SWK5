@@ -8,9 +8,10 @@ namespace WebApplication1.Controllers
     public class TimeController : ControllerBase
     {
         [HttpGet]
+        [Produces("application/json")]
         public object GetTime()
         {
-            return DateTime.Now.ToString();
+            return new { Time = DateTime.Now.ToString("o") };
         }
     }
 }
